@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Weather Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- MomentJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display text-center">Weather Dashboard</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="row">
+        <div class="col">
+          <div class="" id="leftBar">
+            <div class="row">
+              <div class="col">
+                <form class="justify-content-center">
+                  <label class="col font-weight-bold text-center">Search for a City</label>
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="locationInput">
+                  <button class="btn" type="submit" id="searchLocation"></button>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="list-group" id="history">
+                  <!-- buttons go here -->
+                  <button class="list-group-item" id="clear" type="button">Clear
+                    History <i class="" style="color: red;"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <div class="col" id="currentWeather">
+              <div class="row">
+                <div class="col" id="location"></div>
+              </div>
+              <div class="row">
+                <div class="col">Temperature: <span id="temperature"></span></div>
+              </div>
+              <div class="row">
+                <div class="col">Humidity: <span id="humidity"></span></div>
+              </div>
+              <div class="row">
+                <div class="col">Wind Speed: <span id="windSpeed"></span></div>
+              </div>
+              <div class="row">
+                <div class="col">UV Index: <span class="p-1 rounded text-white" id="uv"></span></div>
+              </div>
+              <div class="row">
+                <div class="col">Warnings: </div>
+                <div class="col" id="warnings"></div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col" id="welcome">
+              <div class="">Welcome to Weather Dashboard!</div>
+              <div class="">Search for a city on the left panel</div>
+              <div class="">Get most recent weather and a forecast for the next 5 days!</div>
+
+            </div>
+          </div>
+
+          <div class="row" id="forecast">
+            <div class="container">
+              <div class="row">
+                <div class="col" style="font-size: x-large;">5-Day
+                  Forecast
+                </div>
+              </div>
+              <div class="row">
+                <div class="col" id="0"></div>
+                <div class="col" id="1"></div>
+                <div class="col" id="2"></div>
+                <div class="col" id="3"></div>
+                <div class="col" id="4"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <!-- JS -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+
+</html>
