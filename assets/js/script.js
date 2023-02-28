@@ -1,5 +1,5 @@
 // ! global variables //
-let openWeatherApiKey = '26ba3a7e283acb9cd1e8665c6c3b319a';
+let openWeatherApiKey = 'cb1629cc1b83bc1615c9520d38ff0e31';
 let openWeatherCoordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 let oneCallUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=';
 let userFormEL = $('#city-search');
@@ -10,6 +10,7 @@ let searchHistoryEl = $('#search-history');
 let currentDay = moment().format('M/DD/YYYY');
 const weatherIconUrl = 'http://openweathermap.org/img/wn/';
 let searchHistoryArray = loadSearchHistory();
+let clearEl = clearSearchHistory();
 
 // capitalizes first letter of a string
 function titleCase(str) {
@@ -283,8 +284,6 @@ $('#search-btn').on('click', function() {
   $('#five-day-header').remove();
 });
 
-// clearEl.addEventListener("click", function() {
-//   localStorage.removeItem("searchHistoryEl");
-//   containerEl.innerHTML = "";
-//   searchHistoryEl = [];
-// });
+function clearSearchHistory() {
+  searchHistoryArray.clear();
+};
