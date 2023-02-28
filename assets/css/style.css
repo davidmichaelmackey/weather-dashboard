@@ -41,7 +41,6 @@
 
 }
 
-
 /* viewport dynamics */
 body {
   min-height: 100vh;
@@ -55,7 +54,6 @@ header {
   background-color: rgb(75, 105, 177);
   background-image: linear-gradient(90deg, #4A59B2 13%, #312F7D 42%, #23145C 80%);
 }
-
 
 /* heading */
 .heading {
@@ -93,16 +91,17 @@ h2 {
 }
 
 /* search button */
-#search-btn {
+#search-btn,
+#clear-history {
   margin-bottom: 2rem;
   background-color: #7190DD;
   color: white;
 }
 
-#clear-history {
-  margin-bottom: 2rem;
-  background-color: #7190DD;
-  color: white;
+#search-btn:hover,
+#clear-history:hover {
+  cursor: pointer;
+  background-color: #23145C;
 }
 
 /* history buttons */
@@ -264,6 +263,7 @@ p {
     width: 20rem;
     margin: .5rem auto;
   }
+
 }
 
 /* lrg devices */

@@ -1,4 +1,4 @@
-// ! global variables //
+// global variables
 let openWeatherApiKey = 'cb1629cc1b83bc1615c9520d38ff0e31';
 let openWeatherCoordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 let oneCallUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=';
@@ -8,24 +8,23 @@ let cityInputEl = $('#city');
 let fiveDayEl = $('#five-day');
 let searchHistoryEl = $('#search-history');
 let currentDay = moment().format('M/DD/YYYY');
-const weatherIconUrl = 'http://openweathermap.org/img/wn/';
+let weatherIconUrl = 'http://openweathermap.org/img/wn/';
 let searchHistoryArray = loadSearchHistory();
-let clearEl = clearSearchHistory();
 
 // capitalizes first letter of a string
-function titleCase(str) {
-  var splitStr = str.toLowerCase().split(' ');
-  for (var i = 0; i < splitStr.length; i++) {
+function titleCase(str) { // takes a string as input
+  var splitStr = str.toLowerCase().split(' '); //converted to lowercase using the toLowerCase method and split into an array of words using split method w/ a space separator
+  for (var i = 0; i < splitStr.length; i++) { // iterates through each word in the array
     // You do not need to check if i is larger than splitStr length, as your for does that for you
     // Assign it back to the array
-    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-  }
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1); // gets 1st char of word using charAt method and converts to uppercase using toUpperCase method
+  } // concatenates the uppercase 1st char with the rest of the word using substring method, then assigns the new title-cased word back to the splitStr array at current index
   // Directly return the joined string
-  return splitStr.join(' ');
+  return splitStr.join(' '); // after words have been title-cased, the join method combines the words back into a string with a space separator
 }
 
 // loads cities from local storage and recreate history buttons
-function loadSearchHistory() {
+function loadSearchHistory() { // attempts to retrieve the search history data from browser's localStorage using getItem method - stored uner the key search history
   var searchHistoryArray = JSON.parse(localStorage.getItem('search history'));
 
   // if nothing in localStorage, creates a new object to track user's history
@@ -278,12 +277,8 @@ function submitCitySearch(event) {
 userFormEL.on('submit', submitCitySearch);
 
 // on click of search button - empties the current weather & 5-day forecast info
-$('#search-btn').on('click', function() {
+$('#search-btn').on('click', () => {
   $('#current-weather').remove();
   $('#five-day').empty();
   $('#five-day-header').remove();
 });
-
-function clearSearchHistory() {
-  searchHistoryArray.clear();
-};
