@@ -11,25 +11,28 @@
 <img src="https://img.shields.io/github/followers/davidmichaelmackey?style=for-the-badge" alt="Followers" />
 </p>
 
-## License
-<p align = "center">
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-A31F34?style=for-the-badge" alt="MIT License"/></a>
-</p>
-
-## Description
-This web application provides the user with the current weather data of any known city as well as displaying a future 5-day forecast. The application stores previous search history in local storage and displays them when the page is loaded again.
-
 ## Table of Contents
 
+- [Description](#description)
+- [Links](#links)
 - [Usage](#usage)
 - [Credits](#credits)
+- [License](#license)
 - [Contribute](#contribute)
-- [Tests](#tests)
 - [Questions](#questions)
+
+## Description
+
+This web application provides the user with the current weather data of any known city as well as displaying a future 5-day forecast. The application stores previous search history in local storage and displays them when the page is loaded again.
+
+## Links
+
+[GitHub Repository](https://github.com/davidmichaelmackey/weather-dashboard)
+[GitHub Pages](https://davidmichaelmackey.github.io/weather-dashboard/)
 
 ## Usage
 
-  ![Usage](assets/images/screenshot.png)
+![Usage](assets/images/screenshot.png)
 
 ## Credits
 
@@ -58,6 +61,11 @@ This web application provides the user with the current weather data of any know
       <img src="https://img.shields.io/badge/-JQueryUI-grey?style=for-the-badge"  alt="JQueryUI" />
       <img src="https://img.shields.io/badge/-MomentJS-grey?style=for-the-badge"  alt="MomentJS" />
       
+</p>
+
+## License
+<p align = "center">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-A31F34?style=for-the-badge" alt="MIT License"/></a>
 </p>
 
 ## Contribute
