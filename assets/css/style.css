@@ -92,14 +92,14 @@ h2 {
 
 /* search button */
 #search-btn,
-#clear-history {
+#clear {
   margin-bottom: 2rem;
   background-color: #7190DD;
   color: white;
 }
 
 #search-btn:hover,
-#clear-history:hover {
+#clear:hover {
   cursor: pointer;
   background-color: #23145C;
 }

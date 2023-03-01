@@ -1,7 +1,7 @@
 // global variables
-let openWeatherApiKey = 'cb1629cc1b83bc1615c9520d38ff0e31';
+let openWeatherApiKey = 'fc3def5462a506203a8637a36e23cc8e';
 let openWeatherCoordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
-let oneCallUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=';
+let oneCallUrl = 'https://api.openweathermap.org/data/3.0/onecall?';
 let userFormEL = $('#city-search');
 let col2El = $('.col2');
 let cityInputEl = $('#city');
@@ -10,6 +10,7 @@ let searchHistoryEl = $('#search-history');
 let currentDay = moment().format('M/DD/YYYY');
 let weatherIconUrl = 'http://openweathermap.org/img/wn/';
 let searchHistoryArray = loadSearchHistory();
+let city = "city";
 
 // capitalizes first letter of a string
 function titleCase(str) { // takes a string as input
@@ -24,22 +25,19 @@ function titleCase(str) { // takes a string as input
 }
 
 // loads cities from local storage and recreate history buttons
-function loadSearchHistory() { // attempts to retrieve the search history data from browser's localStorage using getItem method - stored uner the key search history
-  var searchHistoryArray = JSON.parse(localStorage.getItem('search history'));
-
-  // if nothing in localStorage, creates a new object to track user's history
-  if (!searchHistoryArray) {
+function loadSearchHistory() { // attempts to retrieve the search history data from browser's localStorage using getItem method - stored under the key search history
+  var searchHistoryArray = JSON.parse(localStorage.getItem('search history')); // gets data from localStorage using key 'search history'
+  if (!searchHistoryArray) { // if no data, function creates a new object 'searchHistoryArray' and has property 'searchedCity', which is an empty array
     searchHistoryArray = {
       searchedCity: [],
     };
   } else {
-    // adds search history btns
+    // adds search history buttons
     for (var i = 0; i < searchHistoryArray.searchedCity.length; i++) {
       searchHistory(searchHistoryArray.searchedCity[i]);
     }
   }
-
-  return searchHistoryArray;
+  return searchHistoryArray; // updates the search history data stored in localStorage
 }
 
 // saves to local storage
@@ -69,7 +67,7 @@ function searchHistory(city) {
 // weather data from API URL
 function getWeather(city) {
   // apiUrl for coordinates
-  var apiCoordinatesUrl = openWeatherCoordinatesUrl + city + '&appid=' + openWeatherApiKey;
+  var apiCoordinatesUrl = `${openWeatherCoordinatesUrl}${city}&appid=${openWeatherApiKey}`;
   // fetches the city lat/lon
   fetch(apiCoordinatesUrl)
     .then(function(coordinateResponse) {
@@ -78,7 +76,7 @@ function getWeather(city) {
           var cityLatitude = data.coord.lat;
           var cityLongitude = data.coord.lon;
           // fetches weather info
-          var apiOneCallUrl = `${oneCallUrl}${cityLatitude}&lon=${cityLongitude}&appid=${openWeatherApiKey}&units=imperial`;
+          var apiOneCallUrl = `${oneCallUrl}lat=${cityLatitude}&lon=${cityLongitude}&exclude=minutely,hourly&units=imperial&appid=${openWeatherApiKey}`;
 
           fetch(apiOneCallUrl)
             .then(function(weatherResponse) {
@@ -94,8 +92,8 @@ function getWeather(city) {
                     });
 
                   // weather icon from city
-                  var weatherIcon = weatherData.current.weather[0].icon;
-                  var cityCurrentWeatherIcon = `${weatherIconUrl}${weatherIcon}.png`;
+                  var weatherIcon = weatherData.current.weather[0].icon; // weather icon
+                  var cityCurrentWeatherIcon = `${weatherIconUrl}${weatherIcon}.png`; //weather icon url
 
                   // creates h2 to display city, current day, & current weather icon
                   var currentWeatherHeadingEl = $('<h2>')
@@ -151,7 +149,7 @@ function getWeather(city) {
                   // appends current weather heading to current weather div
                   currentWeatherEl.append(currentWeatherHeadingEl);
                   // appends icon to current weather header
-                  currentWeatherHeadingEl.append(iconImgEl);
+                  currentWeatherHeadingEl.append(iconImgEl); // header icon
                   // appends ul to current weather
                   currentWeatherEl.append(currWeatherListEl);
 
@@ -195,10 +193,11 @@ function getWeather(city) {
                     // creates icon for current day weather
                     var forecastIcon = weatherData.daily[i].weather[0].icon;
 
-                    var forecastIconEl = $('<img>')
+                    var forecastIconEl = $('<img>') // img el / icon for cards
                       .attr({
-                        src: weatherIconUrl + forecastIcon + '.png',
-                        alt: 'Weather Icon'
+                        src: `${weatherIconUrl}${forecastIcon}.png`,
+                        alt: 'Weather Icon',
+                        style: 'background-color: #7190DD; border-radius: 25%',
                       });
 
                     // creates card text displaying weather details
@@ -221,15 +220,15 @@ function getWeather(city) {
                     //append cardBodyDivEL to cardDivEl
                     cardDivEl.append(cardBodyDivEl);
                     //append card title to card body
-                    cardBodyDivEl.append(cardTitleEl);
+                    cardBodyDivEl.append(cardTitleEl); // card title
                     //append icon to card body
-                    cardBodyDivEl.append(forecastIconEl);
+                    cardBodyDivEl.append(forecastIconEl); // icon card body
                     //append temp details to card body
-                    cardBodyDivEl.append(tempEL);
+                    cardBodyDivEl.append(tempEL); // temp details
                     //append wind details to card body
-                    cardBodyDivEl.append(windEL);
+                    cardBodyDivEl.append(windEL); // wind details
                     //append humidity details to card body
-                    cardBodyDivEl.append(humidityEL);
+                    cardBodyDivEl.append(humidityEL); // humid details
                   }
 
                 });
@@ -247,8 +246,10 @@ function getWeather(city) {
     });
 }
 
-//function to push button elements to 
+// sets location to atlanta
+getWeather("Atlanta");
 
+//function to push button elements below and search for city
 function submitCitySearch(event) {
   event.preventDefault();
 
@@ -257,7 +258,7 @@ function submitCitySearch(event) {
 
   //prevent them from searching for cities stored in local storage
   if (searchHistoryArray.searchedCity.includes(city)) {
-    alert(city + ' is included in history below. Click the ' + city + ' button to get weather.');
+    alert(`${city} is included in history below. Click the ${city} button to get weather.`);
     cityInputEl.val('');
   } else if (city) {
     getWeather(city);
@@ -282,3 +283,11 @@ $('#search-btn').on('click', () => {
   $('#five-day').empty();
   $('#five-day-header').remove();
 });
+
+// clears localStorage and refreshes page
+function clear() {
+  localStorage.clear(); // clears localStorage
+  location.reload(); // reloads page
+}
+// querySelector to clear localStorage on click for the 'clear' btn
+$("#clear").on("click", clear);
