@@ -33,7 +33,7 @@ This web application provides the user with the current weather data of any know
 
 ## Credits
 
-:bust_in_silhouette: [David Michael Mackey](https://www.notion.so/davidmackey/David-Mackey-a59ce61a996840d6a933e3b135673467)<br>
+:bust_in_silhouette: [David Michael Mackey](https://www.notion.so/davidmichaelmackey/David-Mackey-a59ce61a996840d6a933e3b135673467?pvs=4)<br>
 :email: [Email](mailto:davidmackey@hey.com)<br>
 :octocat: [GitHub](https://github.com/davidmichaelmackey/)<br>
 :briefcase: [Linkedin](https://linkedin.com/in/davidmichaelmackey/)<br>
