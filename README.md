@@ -1,4 +1,5 @@
 # { Weather Dashboard }
+:partly_sunny:
 
 ## Badges
 
