@@ -40,14 +40,14 @@ This web application provides the user with the current weather data of any know
 
 ### Resources
 
-  [Client-Server](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview)
-  [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-  [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL)
-  [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
-  [Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-  [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-  [cURL](https://curl.se/docs/httpscripting.html)
-  [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location)
+  [Client-Server](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview)<br>
+  [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)<br>
+  [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL)<br>
+  [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)<br>
+  [Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)<br>
+  [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)<br>
+  [cURL](https://curl.se/docs/httpscripting.html)<br>
+  [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location)<br>
 
 ## Toolset
 
