@@ -116,6 +116,11 @@ h2 {
   padding: .7rem 0;
 }
 
+.btn:hover {
+  background-color: #7190DD;
+  color: white;
+}
+
 /* line break */
 hr {
   border-top: .2rem solid rgba(0, 0, 0, 1);
@@ -124,7 +129,8 @@ hr {
 /* current weather */
 #current-weather {
   height: 50%;
-  border: .1rem solid black;
+  border: 1px solid black;
+  padding: 18px;
 }
 
 /* weather container list */
@@ -182,6 +188,7 @@ h3 {
   height: 20rem;
   padding-left: 4%;
   padding-top: 4%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
