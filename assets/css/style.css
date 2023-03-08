@@ -30,7 +30,7 @@
   margin: 0 auto;
 }
 
-.col2 {
+.col-days {
   width: 65%;
   margin-right: auto;
   margin-top: 1%;
@@ -207,14 +207,14 @@ p {
 }
 
 /* xl devices */
-@media (max-width: 2048px) {
+@media (max-width: 1200px) {
 
   .col-searcharea {
     width: 100%;
     text-align: center;
   }
 
-  #city-search,
+  #search-cities,
   hr,
   .btn {
     width: 30rem;
@@ -237,7 +237,7 @@ p {
     margin-bottom: 0;
   }
 
-  .col2 {
+  .col-days {
     width: 100%;
   }
 
@@ -272,16 +272,16 @@ p {
 
 }
 
-/* lrg devices */
-@media (max-width: 1080px) {}
+/* large */
+@media (max-width: 1024px) {}
 
-/* med devices */
-@media (max-width: 720px) {
+/* medium */
+@media (max-width: 768px) {
   .col-searcharea {
     width: 100%;
   }
 
-  .col2 {
+  .col-days {
     width: 100%;
   }
 
@@ -291,11 +291,11 @@ p {
 
 }
 
-/* sm devices */
-@media (max-width: 500px) {
+/* small */
+@media (max-width: 480px) {
 
   #current-weather {
-    width: 300px;
+    width: 320px;
   }
 
 }
