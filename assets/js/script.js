@@ -102,8 +102,10 @@ function getWeather(city) {
                     });
 
                   // weather icon from city
-                  var weatherIcon = weatherData.current.weather[0].icon; // weather icon
-                  var cityCurrentWeatherIcon = `${iconUrl}${weatherIcon}.png`; //weather icon url
+                  // weather icon
+                  var weatherIcon = weatherData.current.weather[0].icon;
+                  //weather icon url
+                  var cityCurrentWeatherIcon = `${iconUrl}${weatherIcon}.png`;
 
                   // creates h2 to display city, current day, & current weather icon
                   var currentWeatherHead = $('<h2>')
