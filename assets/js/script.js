@@ -96,7 +96,7 @@ function getWeather(city) {
                   var cityCurrentWeatherIcon = `${weatherIconUrl}${weatherIcon}.png`; //weather icon url
 
                   // creates h2 to display city, current day, & current weather icon
-                  var currentWeatherHeadingEl = $('<h2>')
+                  var currentWeatherHead = $('<h2>')
                     .text(city + ' (' + currentDay + ')');
                   // creates img to display icon
                   var iconImgEl = $('<img>')
@@ -147,9 +147,9 @@ function getWeather(city) {
                   // appends current weather div to col2 before #five-day
                   $('#five-day').before(currentWeatherEl);
                   // appends current weather heading to current weather div
-                  currentWeatherEl.append(currentWeatherHeadingEl);
+                  currentWeatherEl.append(currentWeatherHead);
                   // appends icon to current weather header
-                  currentWeatherHeadingEl.append(iconImgEl); // header icon
+                  currentWeatherHead.append(iconImgEl); // header icon
                   // appends ul to current weather
                   currentWeatherEl.append(currWeatherListEl);
 
