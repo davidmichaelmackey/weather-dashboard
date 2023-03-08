@@ -7,42 +7,52 @@ let col2El = $('.col-days');
 let cityIo = $('#city');
 let fiveDays = $('#five-day');
 let srchHstry = $('#srch-Hstry');
-let currentDay = moment().format('M/DD/YYYY');
-let weatherIconUrl = 'http://openweathermap.org/img/wn/';
-let searchHistoryArr = loadSearchHistory();
+let currDay = moment().format('M/DD/YYYY');
+let iconUrl = 'http://openweathermap.org/img/wn/';
+let srchHstryArr = loadSearchHistory();
 let city = "city";
 
 // capitalizes first letter of a string
-function caseHandling(str) { // takes a string as input
-  var splitStr = str.toLowerCase().split(' '); //converted to lowercase using the toLowerCase method and split into an array of words using split method w/ a space separator
-  for (var i = 0; i < splitStr.length; i++) { // iterates through each word in the array
+// takes a string as input;
+function caseHandling(str) {
+  //converted to lowercase using the toLowerCase method and split into an array of words using split method w/ a space separator
+  var splitStr = str.toLowerCase().split(' ');
+  // iterates through each word in the array
+  for (var i = 0; i < splitStr.length; i++) {
     // You do not need to check if i is larger than splitStr length, as your for does that for you
     // Assign it back to the array
-    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1); // gets 1st char of word using charAt method and converts to uppercase using toUpperCase method
-  } // concatenates the uppercase 1st char with the rest of the word using substring method, then assigns the new title-cased word back to the splitStr array at current index
-  // Directly return the joined string
-  return splitStr.join(' '); // after words have been title-cased, the join method combines the words back into a string with a space separator
+    // gets 1st char of word using charAt method and converts to uppercase using toUpperCase method
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    // concatenates the uppercase 1st char with the rest of the word using substring method, then assigns the new title-cased word back to the splitStr array at current index
+  }
+  // directly return the joined string
+  // after words have been title-cased, the join method combines the words back into a string with a space separator
+  return splitStr.join(' ');
 }
 
 // loads cities from local storage and recreate history buttons
-function loadSearchHistory() { // attempts to retrieve the search history data from browser's localStorage using getItem method - stored under the key search history
-  var searchHistoryArr = JSON.parse(localStorage.getItem('search history')); // gets data from localStorage using key 'search history'
-  if (!searchHistoryArr) { // if no data, function creates a new object 'searchHistoryArr' and has property 'searchedCity', which is an empty array
-    searchHistoryArr = {
+// attempts to retrieve the search history data from browser's localStorage using getItem method - stored under the key search history
+function loadSearchHistory() {
+  // gets data from localStorage using key 'search history'
+  var srchHstryArr = JSON.parse(localStorage.getItem('search history'));
+  // if no data, function creates a new object 'srchHstryArr' and has property 'searchedCity', which is an empty array
+  if (!srchHstryArr) {
+    srchHstryArr = {
       searchedCity: [],
     };
   } else {
     // adds search history buttons
-    for (var i = 0; i < searchHistoryArr.searchedCity.length; i++) {
-      searchHistory(searchHistoryArr.searchedCity[i]);
+    for (var i = 0; i < srchHstryArr.searchedCity.length; i++) {
+      searchHistory(srchHstryArr.searchedCity[i]);
     }
   }
-  return searchHistoryArr; // updates the search history data stored in localStorage
+  // updates the search history data stored in localStorage
+  return srchHstryArr;
 }
 
 // saves to local storage
 function saveSearchHistory() {
-  localStorage.setItem('search history', JSON.stringify(searchHistoryArr));
+  localStorage.setItem('search history', JSON.stringify(srchHstryArr));
 };
 
 // creates history city buttons
@@ -53,7 +63,7 @@ function searchHistory(city) {
     .on('click', function() {
       $('#current-weather').remove();
       $('#five-day').empty();
-      $('#five-day-header').remove();
+      $('#forecast-header').remove();
       getWeather(city);
     })
     .attr({
@@ -93,11 +103,11 @@ function getWeather(city) {
 
                   // weather icon from city
                   var weatherIcon = weatherData.current.weather[0].icon; // weather icon
-                  var cityCurrentWeatherIcon = `${weatherIconUrl}${weatherIcon}.png`; //weather icon url
+                  var cityCurrentWeatherIcon = `${iconUrl}${weatherIcon}.png`; //weather icon url
 
                   // creates h2 to display city, current day, & current weather icon
                   var currentWeatherHead = $('<h2>')
-                    .text(city + ' (' + currentDay + ')');
+                    .text(city + ' (' + currDay + ')');
                   // creates img to display icon
                   var iconImgEl = $('<img>')
                     .attr({
@@ -159,7 +169,7 @@ function getWeather(city) {
                   var fiveDayHeaderEl = $('<h2>')
                     .text('5-Day Forecast:')
                     .attr({
-                      id: 'five-day-header'
+                      id: 'forecast-header'
                     });
 
                   // appends 5 day forecast header to col2 after current weather div
@@ -195,7 +205,7 @@ function getWeather(city) {
 
                     var forecastIconEl = $('<img>') // img el / icon for cards
                       .attr({
-                        src: `${weatherIconUrl}${forecastIcon}.png`,
+                        src: `${iconUrl}${forecastIcon}.png`,
                         alt: 'Weather Icon',
                         style: 'margin: 8%; background-color: #7190DD; border-radius: 25%',
                       });
@@ -220,15 +230,20 @@ function getWeather(city) {
                     //append cardBodyDivEL to cardDivEl
                     cardDivEl.append(cardBodyDivEl);
                     //append card title to card body
-                    cardBodyDivEl.append(cardTitleEl); // card title
+                    // card title
+                    cardBodyDivEl.append(cardTitleEl);
                     //append icon to card body
-                    cardBodyDivEl.append(forecastIconEl); // icon card body
+                    // icon card body
+                    cardBodyDivEl.append(forecastIconEl);
                     //append temp details to card body
-                    cardBodyDivEl.append(tempEL); // temp details
+                    // temp details
+                    cardBodyDivEl.append(tempEL);
                     //append wind details to card body
-                    cardBodyDivEl.append(windEL); // wind details
+                    // wind details
+                    cardBodyDivEl.append(windEL);
                     //append humidity details to card body
-                    cardBodyDivEl.append(humidityEL); // humid details
+                    // humid details
+                    cardBodyDivEl.append(humidityEL);
                   }
 
                 });
@@ -257,20 +272,20 @@ function submitCitySearch(event) {
   var city = caseHandling(cityIo.val().trim());
 
   //prevent them from searching for cities stored in local storage
-  if (searchHistoryArr.searchedCity.includes(city)) {
+  if (srchHstryArr.searchedCity.includes(city)) {
     alert(`${city} is included in history below. Click the ${city} button to get weather.`);
     cityIo.val('');
   } else if (city) {
     getWeather(city);
     searchHistory(city);
-    searchHistoryArr.searchedCity.push(city);
+    srchHstryArr.searchedCity.push(city);
     saveSearchHistory();
     //empty the form text area
     cityIo.val('');
 
     //if user doesn't type in a city
   } else {
-    alert('Please enter a city');
+    alert('Please enter a city!');
   }
 }
 
@@ -281,13 +296,15 @@ usrForm.on('submit', submitCitySearch);
 $('#search-btn').on('click', () => {
   $('#current-weather').remove();
   $('#five-day').empty();
-  $('#five-day-header').remove();
+  $('#forecast-header').remove();
 });
 
 // clears localStorage and refreshes page
 function clear() {
-  localStorage.clear(); // clears localStorage
-  location.reload(); // reloads page
+  // clears localStorage
+  localStorage.clear();
+  // reloads page
+  location.reload();
 }
 // querySelector to clear localStorage on click for the 'clear' btn
 $("#clear").on("click", clear);
