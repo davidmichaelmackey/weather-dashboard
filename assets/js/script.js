@@ -4,12 +4,12 @@ let openWeatherCoordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather
 let oneCallUrl = 'https://api.openweathermap.org/data/3.0/onecall?';
 let userFormEL = $('#city-search');
 let col2El = $('.col2');
-let cityInputEl = $('#city');
+let cityIo = $('#city');
 let fiveDayEl = $('#five-day');
 let searchHistoryEl = $('#search-history');
 let currentDay = moment().format('M/DD/YYYY');
 let weatherIconUrl = 'http://openweathermap.org/img/wn/';
-let searchHistoryArray = loadSearchHistory();
+let searchHistoryArr = loadSearchHistory();
 let city = "city";
 
 // capitalizes first letter of a string
@@ -26,23 +26,23 @@ function titleCase(str) { // takes a string as input
 
 // loads cities from local storage and recreate history buttons
 function loadSearchHistory() { // attempts to retrieve the search history data from browser's localStorage using getItem method - stored under the key search history
-  var searchHistoryArray = JSON.parse(localStorage.getItem('search history')); // gets data from localStorage using key 'search history'
-  if (!searchHistoryArray) { // if no data, function creates a new object 'searchHistoryArray' and has property 'searchedCity', which is an empty array
-    searchHistoryArray = {
+  var searchHistoryArr = JSON.parse(localStorage.getItem('search history')); // gets data from localStorage using key 'search history'
+  if (!searchHistoryArr) { // if no data, function creates a new object 'searchHistoryArr' and has property 'searchedCity', which is an empty array
+    searchHistoryArr = {
       searchedCity: [],
     };
   } else {
     // adds search history buttons
-    for (var i = 0; i < searchHistoryArray.searchedCity.length; i++) {
-      searchHistory(searchHistoryArray.searchedCity[i]);
+    for (var i = 0; i < searchHistoryArr.searchedCity.length; i++) {
+      searchHistory(searchHistoryArr.searchedCity[i]);
     }
   }
-  return searchHistoryArray; // updates the search history data stored in localStorage
+  return searchHistoryArr; // updates the search history data stored in localStorage
 }
 
 // saves to local storage
 function saveSearchHistory() {
-  localStorage.setItem('search history', JSON.stringify(searchHistoryArray));
+  localStorage.setItem('search history', JSON.stringify(searchHistoryArr));
 };
 
 // creates history city buttons
@@ -125,11 +125,11 @@ function getWeather(city) {
                         .text(weatherData.current.uvi);
 
                       if (uviItem.text() <= 2) {
-                        uviItem.addClass('favorable');
+                        uviItem.addClass('green');
                       } else if (uviItem.text() > 2 && uviItem.text() <= 7) {
-                        uviItem.addClass('moderate');
+                        uviItem.addClass('yellow');
                       } else {
-                        uviItem.addClass('severe');
+                        uviItem.addClass('red');
                       }
 
                       currWeatherListItem.append(uviItem);
@@ -179,7 +179,7 @@ function getWeather(city) {
                   for (var i = 0; i < fiveDayArray.length; i++) {
                     // creates a div container for each card
                     var cardDivEl = $('<div>')
-                      .addClass('col3');
+                      .addClass('col-fiveday');
 
                     // creates div container for the card body
                     var cardBodyDivEl = $('<div>')
@@ -254,19 +254,19 @@ function submitCitySearch(event) {
   event.preventDefault();
 
   //get value from user input
-  var city = titleCase(cityInputEl.val().trim());
+  var city = titleCase(cityIo.val().trim());
 
   //prevent them from searching for cities stored in local storage
-  if (searchHistoryArray.searchedCity.includes(city)) {
+  if (searchHistoryArr.searchedCity.includes(city)) {
     alert(`${city} is included in history below. Click the ${city} button to get weather.`);
-    cityInputEl.val('');
+    cityIo.val('');
   } else if (city) {
     getWeather(city);
     searchHistory(city);
-    searchHistoryArray.searchedCity.push(city);
+    searchHistoryArr.searchedCity.push(city);
     saveSearchHistory();
     //empty the form text area
-    cityInputEl.val('');
+    cityIo.val('');
 
     //if user doesn't type in a city
   } else {
