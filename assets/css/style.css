@@ -184,7 +184,7 @@ h3 {
 /* card bodies */
 .card-body {
   background-color: #343D4D;
-  height: 20rem;
+  /* height: 40rem; */
   padding-left: 4%;
   padding-top: 4%;
   padding: 20px;
@@ -206,7 +206,7 @@ p {
   margin-bottom: 1%;
 }
 
-/* xl devices */
+/* m-queries */
 @media (max-width: 1200px) {
 
   .col-searcharea {
@@ -270,32 +270,11 @@ p {
     margin: .5rem auto;
   }
 
-}
-
-/* large */
-@media (max-width: 1024px) {}
-
-/* medium */
-@media (max-width: 768px) {
-  .col-searcharea {
-    width: 100%;
-  }
-
-  .col-days {
-    width: 100%;
-  }
-
-  .col-fiveday {
-    width: 100%;
-  }
-
-}
-
-/* small */
-@media (max-width: 480px) {
-
   #current-weather {
-    width: 320px;
+    width: 70%;
   }
 
+  .card-body {
+    width: 45%;
+  }
 }
