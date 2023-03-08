@@ -1,4 +1,6 @@
-/* resets */
+/* *  css    */
+/* * resets */
+/* * ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,9 @@
   font-size: 62.5%;
 }
 
+/* ======== */
 /* layouts */
+/* ====== */
 .border {
   border: 1px solid black;
 }
@@ -40,12 +44,16 @@
   width: 18%;
 }
 
+/* ========= */
 /* viewport */
+/* ======= */
 body {
   min-height: 100vh;
 }
 
+/* ======= */
 /* header */
+/* ===== */
 header {
   text-align: center;
   padding-top: 5px;
@@ -54,14 +62,15 @@ header {
   background-image: linear-gradient(90deg, #4A59B2 13%, #312F7D 42%, #23145C 80%);
 }
 
-/* heading */
 .heading {
   color: white;
   font-size: 4rem;
   font-weight: bold;
 }
 
+/* === */
 /* h1 */
+/* = */
 .h1 {
   font-weight: bold;
   font-size: 3.25rem;
@@ -206,8 +215,15 @@ p {
   margin-bottom: 1%;
 }
 
-/* m-queries */
+/* ! ========== */
+/* ! m-queries */
+/* ! ======== */
+
 @media (max-width: 1200px) {
+
+  .btn {
+    width: 70%;
+  }
 
   .col-searcharea {
     width: 100%;
@@ -226,7 +242,7 @@ p {
     text-align: center;
   }
 
-  #search-history {
+  #srch-Hstry {
     display: flex;
     flex-direction: column;
   }

@@ -2,18 +2,18 @@
 let openWeatherApiKey = 'fc3def5462a506203a8637a36e23cc8e';
 let openWeatherCoordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 let oneCallUrl = 'https://api.openweathermap.org/data/3.0/onecall?';
-let userFormEL = $('#search-cities');
+let usrForm = $('#search-cities');
 let col2El = $('.col-days');
 let cityIo = $('#city');
-let fiveDayEl = $('#five-day');
-let searchHistoryEl = $('#search-history');
+let fiveDays = $('#five-day');
+let srchHstry = $('#srch-Hstry');
 let currentDay = moment().format('M/DD/YYYY');
 let weatherIconUrl = 'http://openweathermap.org/img/wn/';
 let searchHistoryArr = loadSearchHistory();
 let city = "city";
 
 // capitalizes first letter of a string
-function titleCase(str) { // takes a string as input
+function caseHandling(str) { // takes a string as input
   var splitStr = str.toLowerCase().split(' '); //converted to lowercase using the toLowerCase method and split into an array of words using split method w/ a space separator
   for (var i = 0; i < splitStr.length; i++) { // iterates through each word in the array
     // You do not need to check if i is larger than splitStr length, as your for does that for you
@@ -61,7 +61,7 @@ function searchHistory(city) {
     });
 
   // appends button to search history container
-  searchHistoryEl.append(searchHistoryBtn);
+  srchHstry.append(searchHistoryBtn);
 }
 
 // weather data from API URL
@@ -216,7 +216,7 @@ function getWeather(city) {
                       .text('Humidity: ' + weatherData.daily[i].humidity + '%');
 
                     //append cardDivEl to the #five-day container
-                    fiveDayEl.append(cardDivEl);
+                    fiveDays.append(cardDivEl);
                     //append cardBodyDivEL to cardDivEl
                     cardDivEl.append(cardBodyDivEl);
                     //append card title to card body
@@ -254,7 +254,7 @@ function submitCitySearch(event) {
   event.preventDefault();
 
   //get value from user input
-  var city = titleCase(cityIo.val().trim());
+  var city = caseHandling(cityIo.val().trim());
 
   //prevent them from searching for cities stored in local storage
   if (searchHistoryArr.searchedCity.includes(city)) {
@@ -275,7 +275,7 @@ function submitCitySearch(event) {
 }
 
 // on submission of user data gets user input for city & fetch API data
-userFormEL.on('submit', submitCitySearch);
+usrForm.on('submit', submitCitySearch);
 
 // on click of search button - empties the current weather & 5-day forecast info
 $('#search-btn').on('click', () => {
