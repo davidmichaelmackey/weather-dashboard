@@ -197,7 +197,7 @@ function getWeather(city) {
                       .attr({
                         src: `${weatherIconUrl}${forecastIcon}.png`,
                         alt: 'Weather Icon',
-                        style: 'background-color: #7190DD; border-radius: 25%',
+                        style: 'margin: 8%; background-color: #7190DD; border-radius: 25%',
                       });
 
                     // creates card text displaying weather details
