@@ -55,12 +55,12 @@ This web application provides the user with the current weather data of any know
 
 ## Toolset
 
-<p align="center"><img src="https://img.shields.io/badge/-HTML-grey?style=for-the-badge"  alt="HTML" />
-      <img src="https://img.shields.io/badge/-CSS-grey?style=for-the-badge"  alt="CSS" />
-      <img src="https://img.shields.io/badge/-JS-grey?style=for-the-badge"  alt="JS" />
-      <img src="https://img.shields.io/badge/-JQuery-grey?style=for-the-badge"  alt="JQuery" />
-      <img src="https://img.shields.io/badge/-JQueryUI-grey?style=for-the-badge"  alt="JQueryUI" />
-      <img src="https://img.shields.io/badge/-MomentJS-grey?style=for-the-badge"  alt="MomentJS" />
+<p align="center"><img src="https://img.shields.io/badge/-HTML-EB6337?style=for-the-badge"  alt="HTML" />
+      <img src="https://img.shields.io/badge/-CSS-2A56F5?style=for-the-badge"  alt="CSS" />
+      <img src="https://img.shields.io/badge/-JS-F6DD4A?style=for-the-badge"  alt="JS" />
+      <img src="https://img.shields.io/badge/-JQuery-2E67A8?style=for-the-badge"  alt="JQuery" />
+      <img src="https://img.shields.io/badge/-JQueryUI-0D1422?style=for-the-badge"  alt="JQueryUI" />
+      <img src="https://img.shields.io/badge/-MomentJS-E06E38?style=for-the-badge"  alt="MomentJS" />
       
 </p>
 
