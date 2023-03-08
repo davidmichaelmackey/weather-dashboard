@@ -38,7 +38,6 @@
 
 .col-fiveday {
   width: 18%;
-
 }
 
 /* viewport */
@@ -150,7 +149,7 @@ ul {
   filter: drop-shadow(0 0 0.75rem grey);
 }
 
-/* uv index */
+/* ultraviolet index */
 .green {
   background-color: green;
   font-size: 2rem;
@@ -169,7 +168,7 @@ ul {
   border-radius: .5rem;
 }
 
-/* UVindex value padding */
+/* ultraviolet i val padding */
 span {
   padding: 0 1.5rem;
   color: white;
@@ -182,7 +181,7 @@ h3 {
   color: white;
 }
 
-/* card body */
+/* card bodies */
 .card-body {
   background-color: #343D4D;
   height: 20rem;
@@ -195,7 +194,7 @@ h3 {
   justify-content: space-around;
 }
 
-/* card body weather details */
+/* card bodies weather deets */
 p {
   font-size: 2rem;
   color: white;
@@ -208,7 +207,7 @@ p {
 }
 
 /* xl devices */
-@media (max-width: 1144px) {
+@media (max-width: 2048px) {
 
   .col-searcharea {
     width: 100%;
@@ -274,10 +273,10 @@ p {
 }
 
 /* lrg devices */
-@media (max-width: 992px) {}
+@media (max-width: 1080px) {}
 
 /* med devices */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .col-searcharea {
     width: 100%;
   }
@@ -293,7 +292,7 @@ p {
 }
 
 /* sm devices */
-@media (max-width: 630px) {
+@media (max-width: 500px) {
 
   #current-weather {
     width: 300px;
