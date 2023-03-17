@@ -278,3 +278,14 @@ $('#search-btn').on('click', () => {
   $('#five-day').empty();
   $('#forecast-header').remove();
 });
+
+// Define the clear function
+function clearLocalStorage() {
+  // Prompt user to confirm action
+  const confirmClear = confirm(`Are you sure you want to clear the local storage?`);
+  // If the user confirms the action, clear local storage and reload the page
+  if (confirmClear) {
+    localStorage.clear();
+    window.location.reload();
+  }
+}
