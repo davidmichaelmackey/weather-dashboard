@@ -241,3 +241,6 @@ function getWeather(city) {
       alert('Unable to connect to Open Weather');
     });
 }
+
+// sets location to nashville
+getWeather("Nashville");
