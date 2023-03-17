@@ -30,3 +30,6 @@ function loadSearchHistory() {
   // updates the search history data stored in localStorage
   return srchHstryArr;
 }
+
+// saves to local storage
+const saveSearchHistory = () => localStorage.setItem('search history', JSON.stringify(srchHstryArr));
