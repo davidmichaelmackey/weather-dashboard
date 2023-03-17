@@ -271,3 +271,10 @@ function submitCitySearch(event) {
 
 // on submission of user data gets user input for city & fetch API data
 usrForm.on('submit', submitCitySearch);
+
+// on click of search button - empties the current weather & 5-day forecast info
+$('#search-btn').on('click', () => {
+  $('#current-weather').remove();
+  $('#five-day').empty();
+  $('#forecast-header').remove();
+});
