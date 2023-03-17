@@ -16,7 +16,34 @@
     <!-- header -->
     <header class="heading">Weather Dashboard</header>
     <!-- main -->
-    <main id='container' class="container"></main>
+    <main id='container' class="container">
+      <div class="row">
+        <!-- city search -->
+        <div class="col-searcharea">
+          <div id='search-area'>
+            <h1 class='h1'>Search for a City</h1>
+            <form id='search-cities'>
+              <input name='city' type="text" placeholder="City Name" id='city' autofocus='true' class='city-input' />
+              <button type="submit" id='search-btn' class='btn'>Search</button>
+            </form>
+            <!-- break -->
+            <hr>
+            </hr>
+            <!-- clear -->
+            <div>
+              <button class="btn" id="clear">Clear History</button>
+            </div>
+            <!-- search history -->
+            <div id="srch-Hstry">
+            </div>
+          </div>
+        </div>
+        <!-- current weather & forecast -->
+        <div class="col-days">
+          <div id='five-day' class='row spacebetween'></div>
+        </div>
+      </div>
+    </main>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
