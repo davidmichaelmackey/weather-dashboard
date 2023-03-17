@@ -268,3 +268,6 @@ function submitCitySearch(event) {
     alert('Please enter a city!');
   }
 }
+
+// on submission of user data gets user input for city & fetch API data
+usrForm.on('submit', submitCitySearch);
