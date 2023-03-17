@@ -15,3 +15,8 @@ const usrForm = $('#search-cities'),
 let srchHstryArr = loadSearchHistory();
 const currDay = moment().format('M/DD/YYYY');
 let city = "city";
+
+// uses the replace method with regex to capitalize first letter of each word
+function caseHandling(str) {
+  return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+}
