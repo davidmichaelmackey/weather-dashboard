@@ -244,3 +244,27 @@ function getWeather(city) {
 
 // sets location to nashville
 getWeather("Nashville");
+
+//function to push button elements below and search for city
+function submitCitySearch(event) {
+  event.preventDefault();
+
+  //get value from user input
+  var city = caseHandling(cityIo.val().trim());
+
+  //prevent them from searching for cities stored in local storage
+  if (srchHstryArr.searchedCity.includes(city)) {
+    alert(`${city} is included in history below. Click the ${city} button to get weather.`);
+    cityIo.val('');
+  } else if (city) {
+    getWeather(city);
+    searchHistory(city);
+    srchHstryArr.searchedCity.push(city);
+    saveSearchHistory();
+    //empty the form text area
+    cityIo.val('');
+    //if user doesn't type in a city
+  } else {
+    alert('Please enter a city!');
+  }
+}
