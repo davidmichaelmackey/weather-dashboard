@@ -20,3 +20,13 @@ let city = "city";
 function caseHandling(str) {
   return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
 }
+
+// event listener for search form
+function loadSearchHistory() {
+  // gets data from localStorage using key 'search history'
+  var srchHstryArr = JSON.parse(localStorage.getItem('search history')) || { searchedCity: [] };
+  // adds search history buttons
+  srchHstryArr.searchedCity.forEach(searchHistory);
+  // updates the search history data stored in localStorage
+  return srchHstryArr;
+}
