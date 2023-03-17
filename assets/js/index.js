@@ -289,3 +289,6 @@ function clearLocalStorage() {
     window.location.reload();
   }
 }
+
+// Add a click event listener to the clear button
+$('#clear').on('click', clearLocalStorage);
