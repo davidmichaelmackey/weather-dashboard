@@ -33,3 +33,22 @@ function loadSearchHistory() {
 
 // saves to local storage
 const saveSearchHistory = () => localStorage.setItem('search history', JSON.stringify(srchHstryArr));
+
+// creates history city buttons
+function searchHistory(city) {
+  var searchHistoryBtn = $('<button>')
+    .addClass('btn')
+    .text(city)
+    .on('click', function() {
+      $('#current-weather').remove();
+      $('#five-day').empty();
+      $('#forecast-header').remove();
+      getWeather(city);
+    })
+    .attr({
+      type: 'button'
+    });
+
+  // appends button to search history container
+  srchHstry.append(searchHistoryBtn);
+}
