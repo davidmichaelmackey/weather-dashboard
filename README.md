@@ -56,14 +56,11 @@ This web application provides the user with the current weather data of any know
 
 ## Toolset
 
-<p align="center"><img src="https://img.shields.io/badge/-HTML-EB6337?style=for-the-badge"  alt="HTML" />
-      <img src="https://img.shields.io/badge/-CSS-2A56F5?style=for-the-badge"  alt="CSS" />
-      <img src="https://img.shields.io/badge/-JS-F6DD4A?style=for-the-badge"  alt="JS" />
-      <img src="https://img.shields.io/badge/-JQuery-2E67A8?style=for-the-badge"  alt="JQuery" />
-      <img src="https://img.shields.io/badge/-JQueryUI-0D1422?style=for-the-badge"  alt="JQueryUI" />
-      <img src="https://img.shields.io/badge/-MomentJS-E06E38?style=for-the-badge"  alt="MomentJS" />
-      
-</p>
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=E34F26&labelColor=gray)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=1572B6&labelColor=gray)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=F7DF1E&labelColor=gray)
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=0769AD&labelColor=gray)
+![MomentJS](https://img.shields.io/badge/MomentJS-000000?style=for-the-badge&logo=MomentJS&logoColor=000000&labelColor=gray)
 
 ## License
 
