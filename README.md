@@ -64,9 +64,7 @@ This web application provides the user with the current weather data of any know
 
 ## License
 
-<p align = "center">
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-A31F34?style=for-the-badge" alt="MIT License"/></a>
-</p>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-A31F34?style=for-the-badge" alt="MIT License"/></a>
 
 ## Contribute
 
