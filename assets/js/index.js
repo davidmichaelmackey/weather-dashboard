@@ -1,15 +1,15 @@
 // const variables
-const apiKey = 'fc3def5462a506203a8637a36e23cc8e',
-  coordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=',
-  oneCallUrl = 'https://api.openweathermap.org/data/3.0/onecall?',
-  iconUrl = 'http://openweathermap.org/img/wn/';
+const apiKey = 'fc3def5462a506203a8637a36e23cc8e';
+const coordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const oneCallUrl = 'https://api.openweathermap.org/data/3.0/onecall?';
+const iconUrl = 'http://openweathermap.org/img/wn/';
 
 // DOM elements
-const usrForm = $('#search-cities'),
-  col2El = $('.col-days'),
-  cityIo = $('#city'),
-  fiveDays = $('#five-day'),
-  srchHstry = $('#srch-Hstry');
+const usrForm = $('#search-cities');
+const col2El = $('.col-days');
+const cityIo = $('#city');
+const fiveDays = $('#five-day');
+const srchHstry = $('#srch-Hstry');
 
 // variables
 let srchHstryArr = loadSearchHistory();
@@ -18,7 +18,9 @@ let city = "city";
 
 // uses the replace method with regex to capitalize first letter of each word
 function caseHandling(str) {
-  return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  return str
+    .toLowerCase()
+    .replace(/\b\w/g, c => c.toUpperCase());
 }
 
 // event listener for search form
@@ -32,7 +34,9 @@ function loadSearchHistory() {
 }
 
 // saves to local storage
-const saveSearchHistory = () => localStorage.setItem('search history', JSON.stringify(srchHstryArr));
+const saveSearchHistory = () => {
+  localStorage.setItem('search history', JSON.stringify(srchHstryArr));
+};
 
 // creates history city buttons
 function searchHistory(city) {
@@ -97,20 +101,20 @@ function getWeather(city) {
                       alt: 'Weather Icon'
                     });
                   // creates current weather info as list
-                  var currWeatherListEl = $('<ul>');
+                  var currentWeatherListElement = $('<ul>');
 
-                  var currWeatherDetails = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
+                  var currentWeatherInfo = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
 
-                  for (var i = 0; i < currWeatherDetails.length; i++) {
+                  for (var i = 0; i < currentWeatherInfo.length; i++) {
                     // creates an single list items, appends to ul
 
                     // assigns bg color to UVI using conditionals
-                    if (currWeatherDetails[ i ] === 'UV Index: ' + weatherData.current.uvi) {
+                    if (currentWeatherInfo[ i ] === 'UV Index: ' + weatherData.current.uvi) {
 
                       var currWeatherListItem = $('<li>')
                         .text('UV Index: ');
 
-                      currWeatherListEl.append(currWeatherListItem);
+                      currentWeatherListElement.append(currWeatherListItem);
 
                       var uviItem = $('<span>')
                         .text(weatherData.current.uvi);
@@ -128,9 +132,9 @@ function getWeather(city) {
                       // creates every list item that isn't UVI
                     } else {
                       var currWeatherListItem = $('<li>')
-                        .text(currWeatherDetails[ i ]);
+                        .text(currentWeatherInfo[ i ]);
                       // appends to ul
-                      currWeatherListEl.append(currWeatherListItem);
+                      currentWeatherListElement.append(currWeatherListItem);
                     }
 
                   }
@@ -142,7 +146,7 @@ function getWeather(city) {
                   // appends icon to current weather header
                   currentWeatherHead.append(iconImgEl); // header icon
                   // appends ul to current weather
-                  currentWeatherEl.append(currWeatherListEl);
+                  currentWeatherEl.append(currentWeatherListElement);
 
                   // 5-day forecast //
 
@@ -192,7 +196,7 @@ function getWeather(city) {
                       });
 
                     // creates card text displaying weather details
-                    var currWeatherDetails = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
+                    var currentWeatherInfo = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
                     // creates temp
                     var tempEL = $('<p>')
                       .addClass('card-text')
