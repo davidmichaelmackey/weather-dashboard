@@ -105,39 +105,20 @@ function getWeather(city) {
 
                   var currentWeatherInfo = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
 
-                  for (var i = 0; i < currentWeatherInfo.length; i++) {
-                    // creates an single list items, appends to ul
-
-                    // assigns bg color to UVI using conditionals
-                    if (currentWeatherInfo[ i ] === 'UV Index: ' + weatherData.current.uvi) {
-
-                      var currWeatherListItem = $('<li>')
-                        .text('UV Index: ');
-
+                  currentWeatherInfo.forEach(function(info) {
+                    var currWeatherListItem;
+                    if (info === 'UV Index: ' + weatherData.current.uvi) {
+                      currWeatherListItem = $('<li>').text('UV Index: ');
                       currentWeatherListElement.append(currWeatherListItem);
-
-                      var uviItem = $('<span>')
-                        .text(weatherData.current.uvi);
-
-                      if (uviItem.text() <= 2) {
-                        uviItem.addClass('green');
-                      } else if (uviItem.text() > 2 && uviItem.text() <= 7) {
-                        uviItem.addClass('orange');
-                      } else {
-                        uviItem.addClass('red');
-                      }
-
+                      var uviItem = $('<span>').text(weatherData.current.uvi);
+                      var uviClass = uviItem.text() <= 2 ? 'green' : uviItem.text() <= 7 ? 'orange' : 'red';
+                      uviItem.addClass(uviClass);
                       currWeatherListItem.append(uviItem);
-
-                      // creates every list item that isn't UVI
                     } else {
-                      var currWeatherListItem = $('<li>')
-                        .text(currentWeatherInfo[ i ]);
-                      // appends to ul
+                      currWeatherListItem = $('<li>').text(info);
                       currentWeatherListElement.append(currWeatherListItem);
                     }
-
-                  }
+                  });
 
                   // appends current weather div to col2 before #five-day
                   $('#five-day').before(currentWeatherEl);
