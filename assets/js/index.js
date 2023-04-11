@@ -63,23 +63,31 @@ function getWeather(city) {
   var apiCoordinatesUrl = `${coordinatesUrl}${city}&appid=${apiKey}`;
   // fetches the city lat/lon
   fetch(apiCoordinatesUrl)
+    // checks if response is ok
     .then(function(coordinateResponse) {
+      // if response is ok
       if (coordinateResponse.ok) {
+        // parses response to JSON
         coordinateResponse.json().then(function(data) {
+          // gets city latitude
           var cityLatitude = data.coord.lat;
+          // gets city longitude
           var cityLongitude = data.coord.lon;
           // fetches weather info
           var apiOneCallUrl = `${oneCallUrl}lat=${cityLatitude}&lon=${cityLongitude}&exclude=minutely,hourly&units=imperial&appid=${apiKey}`;
 
+          // fetches weather info
           fetch(apiOneCallUrl)
+            // checks if response is ok
             .then(function(weatherResponse) {
+              // if response is ok
               if (weatherResponse.ok) {
+                // parses response to JSON
                 weatherResponse.json().then(function(weatherData) {
-
                   // starts current day @ display
-
                   // adds div to hold current day info
                   var currentWeatherEl = $('<div>')
+                    // adds id to div
                     .attr({
                       id: 'current-weather'
                     });
@@ -100,12 +108,15 @@ function getWeather(city) {
                     .attr({
                       // adds id to img
                       id: 'current-weather-icon',
+                      // adds src to img
                       src: cityCurrentWeatherIcon,
+                      // adds alt to img
                       alt: 'Weather Icon'
                     });
                   // creates current weather info as list
                   var currentWeatherListElement = $('<ul>');
 
+                  // array to hold current weather info
                   var currentWeatherInfo = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
 
                   // for each item in currentWeatherInfo array - creates a list item
@@ -156,13 +167,14 @@ function getWeather(city) {
                   // appends 5 day forecast header to col2 after current weather div
                   $('#current-weather').after(fiveDayHeaderEl);
 
-                  // creates array for the dates for the next 5 days
-
+                  // array to hold the next 5 days
                   var fiveDayArray = [];
 
+                  // for loop to push the next 5 days into the array
                   for (var i = 0; i < 5; i++) {
+                    // gets the next 5 days
                     let forecastDate = moment().add(i + 1, 'days').format('M/DD/YYYY');
-
+                    // pushes the next 5 days into the array
                     fiveDayArray.push(forecastDate);
                   }
 
@@ -170,24 +182,33 @@ function getWeather(city) {
                   for (var i = 0; i < fiveDayArray.length; i++) {
                     // creates a div container for each card
                     var cardDivEl = $('<div>')
+                      // adds class to div
                       .addClass('col-fiveday');
 
                     // creates div container for the card body
                     var cardBodyDivEl = $('<div>')
+                      // adds class to div
                       .addClass('card-body');
 
                     // creates the card-title
                     var cardTitleEl = $('<h3>')
+                      // adds class to h3
                       .addClass('card-title')
+                      // adds text to h3
                       .text(fiveDayArray[ i ]);
 
                     // creates icon for current day weather
                     var forecastIcon = weatherData.daily[ i ].weather[ 0 ].icon;
 
+                    // creates img el / icon for cards
                     var forecastIconEl = $('<img>') // img el / icon for cards
+                      // adds class to img
                       .attr({
+                        // adds src to img
                         src: `${iconUrl}${forecastIcon}.png`,
+                        // adds alt to img
                         alt: 'Weather Icon',
+                        // adds style to img
                         style: 'margin: 8%; background-color: #7190DD; border-radius: 25%',
                       });
 
@@ -195,15 +216,21 @@ function getWeather(city) {
                     var currentWeatherInfo = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
                     // creates temp
                     var tempEL = $('<p>')
+                      // adds class to p
                       .addClass('card-text')
+                      // adds text to p
                       .text('Temp: ' + weatherData.daily[ i ].temp.max);
                     // creates wind
                     var windEL = $('<p>')
+                      // adds class to p
                       .addClass('card-text')
+                      // adds text to p
                       .text('Wind: ' + weatherData.daily[ i ].wind_speed + ' MPH');
                     // creates humidity
                     var humidityEL = $('<p>')
+                      // adds class to p
                       .addClass('card-text')
+                      // adds text to p
                       .text('Humidity: ' + weatherData.daily[ i ].humidity + '%');
 
                     //append cardDivEl to the #five-day container
@@ -254,12 +281,19 @@ function submitCitySearch(event) {
 
   //prevent them from searching for cities stored in local storage
   if (srchHstryArr.searchedCity.includes(city)) {
+    // get weather for city
     alert(`${city} is included in history below. Click the ${city} button to get weather.`);
+    // empty the form text area
     cityIo.val('');
+    // if user types in a city
   } else if (city) {
+    // get weather for city
     getWeather(city);
+    // add city to search history
     searchHistory(city);
+    // push city to searchedCity array
     srchHstryArr.searchedCity.push(city);
+    // save search history to local storage
     saveSearchHistory();
     //empty the form text area
     cityIo.val('');
@@ -274,8 +308,11 @@ usrForm.on('submit', submitCitySearch);
 
 // on click of search button - empties the current weather & 5-day forecast info
 $('#search-btn').on('click', () => {
+  // removes current weather info
   $('#current-weather').remove();
+  // removes 5-day forecast info
   $('#five-day').empty();
+  // removes 5-day forecast header
   $('#forecast-header').remove();
 });
 
