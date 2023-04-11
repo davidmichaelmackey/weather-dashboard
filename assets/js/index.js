@@ -118,7 +118,7 @@ function getWeather(city) {
                       if (uviItem.text() <= 2) {
                         uviItem.addClass('green');
                       } else if (uviItem.text() > 2 && uviItem.text() <= 7) {
-                        uviItem.addClass('yellow');
+                        uviItem.addClass('orange');
                       } else {
                         uviItem.addClass('red');
                       }

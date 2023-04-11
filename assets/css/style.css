@@ -9,7 +9,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 70%;
+  font-size: 68%;
+
 }
 
 /* ======== */
@@ -181,7 +182,7 @@ ul {
   border-radius: 1rem;
 }
 
-.yellow {
+.orange {
   background-color: orange;
   font-size: 2rem;
   border-radius: .5rem;
