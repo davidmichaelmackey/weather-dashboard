@@ -32,7 +32,8 @@ This web application provides the user with the current weather data of any know
 
 ## Links
 
-[Repository](https://github.com/davidmichaelmackey/weather-dashboard)<br>
+[Repository](https://github.com/davidmichaelmackey/weather-dashboard)
+
 [Deployment](https://davidmichaelmackey.github.io/weather-dashboard/)
 
 ## Usage
