@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* *  css     */
 /* * resets  */
 /* * strtr  */
 /* * ===== */
 * {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -142,8 +145,9 @@ hr {
 /* ============== */
 #current-weather {
   height: 50%;
-  border: 1px solid black;
+  border: 3px solid black;
   padding: 18px;
+  margin-bottom: 1.75%;
 }
 
 /* ======================= */
@@ -164,7 +168,8 @@ ul {
 /* icon */
 /* === */
 #current-weather-icon {
-  filter: drop-shadow(0 0 0.75rem grey);
+  filter: drop-shadow(0 0 1rem #23255D);
+  margin-left: 1%;
 }
 
 /* ? ================== */
@@ -173,7 +178,7 @@ ul {
 .green {
   background-color: green;
   font-size: 2rem;
-  border-radius: .5rem;
+  border-radius: 1rem;
 }
 
 .yellow {
@@ -192,7 +197,7 @@ ul {
 /* ? ultraviolet index val padding */
 /* ? ============================ */
 span {
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   color: white;
 }
 
