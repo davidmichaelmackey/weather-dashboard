@@ -18,23 +18,25 @@
 
 ## Table of Contents
 
-- [Description](#description)
 - [Links](#links)
+- [Description](#description)
 - [Usage](#usage)
 - [Credits](#credits)
+- [Resources](#resources)
+- [Toolset](#toolset)
 - [License](#license)
 - [Contribute](#contribute)
 - [Questions](#questions)
-
-## Description
-
-This web application provides the user with the current weather data of any known city as well as displaying a future 5-day forecast. The application stores previous search history in local storage and displays them when the page is loaded again.
 
 ## Links
 
 [Repository](https://github.com/davidmichaelmackey/weather-dashboard)
 
 [Deployment](https://davidmichaelmackey.github.io/weather-dashboard/)
+
+## Description
+
+This web application provides the user with the current weather data of any known city as well as displaying a future 5-day forecast. The application stores previous search history in local storage and displays them when the page is loaded again.
 
 ## Usage
 
