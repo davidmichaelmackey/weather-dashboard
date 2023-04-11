@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* *  css     */
-/* * resets  */
-/* * strtr  */
-/* * ===== */
+/* ============= */
+/* * css        */
+/* * resets    */
+/* * starter  */
+/* * ======= */
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -55,7 +56,6 @@ header {
   text-align: center;
   padding-top: 24px;
   padding-bottom: 24px;
-  /* background-color: rgb(75, 105, 177); */
   background-image: linear-gradient(90deg, #F1C581 13%, #FC97A4 42%, #23255D 80%);
 }
 
