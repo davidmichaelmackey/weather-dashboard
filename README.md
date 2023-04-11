@@ -70,7 +70,7 @@ This web application provides the user with the current weather data of any know
 
 ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=0769AD&labelColor=gray)
 
-![MomentJS](https://img.shields.io/badge/MomentJS-000000?style=for-the-badge&logo=Open-Collective&logoColor=FFFFFF&labelColor=gray)
+![MomentJS](https://img.shields.io/badge/MomentJS-000000?style=for-the-badge&logo=Open-Collective&logoColor=000000&labelColor=gray)
 
 ## License
 
