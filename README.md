@@ -61,9 +61,13 @@ This web application provides the user with the current weather data of any know
 ## Toolset
 
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=E34F26&labelColor=gray)
+
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=1572B6&labelColor=gray)
+
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=F7DF1E&labelColor=gray)
+
 ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=0769AD&labelColor=gray)
+
 ![MomentJS](https://img.shields.io/badge/MomentJS-000000?style=for-the-badge&logo=MomentJS&logoColor=000000&labelColor=gray)
 
 ## License
@@ -76,6 +80,4 @@ This web application provides the user with the current weather data of any know
 
 ## Questions
 
-Have Questions?
-<br>
-Feel free send me an [email](mailto:davidmackey@hey.com) or reach out to me on [Linkedin](https://linkedin.com/in/davidmichaelmackey/).
+Have Questions? Feel free send me an [email](mailto:davidmackey@hey.com) or reach out to me on [Linkedin](https://linkedin.com/in/davidmichaelmackey/).
