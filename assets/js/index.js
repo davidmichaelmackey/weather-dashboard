@@ -1,6 +1,6 @@
 // const variables
-const openWeatherApiKey = 'fc3def5462a506203a8637a36e23cc8e',
-  openWeatherCoordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=',
+const apiKey = 'fc3def5462a506203a8637a36e23cc8e',
+  coordinatesUrl = 'https://api.openweathermap.org/data/2.5/weather?q=',
   oneCallUrl = 'https://api.openweathermap.org/data/3.0/onecall?',
   iconUrl = 'http://openweathermap.org/img/wn/';
 
@@ -56,7 +56,7 @@ function searchHistory(city) {
 // fetches weather data from API URL
 function getWeather(city) {
   // apiUrl for coordinates
-  var apiCoordinatesUrl = `${openWeatherCoordinatesUrl}${city}&appid=${openWeatherApiKey}`;
+  var apiCoordinatesUrl = `${coordinatesUrl}${city}&appid=${apiKey}`;
   // fetches the city lat/lon
   fetch(apiCoordinatesUrl)
     .then(function(coordinateResponse) {
@@ -65,7 +65,7 @@ function getWeather(city) {
           var cityLatitude = data.coord.lat;
           var cityLongitude = data.coord.lon;
           // fetches weather info
-          var apiOneCallUrl = `${oneCallUrl}lat=${cityLatitude}&lon=${cityLongitude}&exclude=minutely,hourly&units=imperial&appid=${openWeatherApiKey}`;
+          var apiOneCallUrl = `${oneCallUrl}lat=${cityLatitude}&lon=${cityLongitude}&exclude=minutely,hourly&units=imperial&appid=${apiKey}`;
 
           fetch(apiOneCallUrl)
             .then(function(weatherResponse) {
