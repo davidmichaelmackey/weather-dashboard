@@ -68,7 +68,7 @@ This web application provides the user with the current weather data of any know
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=F7DF1E&labelColor=gray)
 
-![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jQuery&logoColor=0769AD&labelColor=gray)
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=Open_Collective&logoColor=0769AD&labelColor=gray)
 
 ![MomentJS](https://img.shields.io/badge/MomentJS-000000?style=for-the-badge&logo=MomentJS&logoColor=000000&labelColor=gray)
 
