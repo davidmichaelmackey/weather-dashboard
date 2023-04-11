@@ -26,6 +26,7 @@
 }
 
 .row {
+  margin-top: 2%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -49,10 +50,10 @@
 /* ===== */
 header {
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-color: rgb(75, 105, 177);
-  background-image: linear-gradient(90deg, #4A59B2 13%, #312F7D 42%, #23145C 80%);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  /* background-color: rgb(75, 105, 177); */
+  background-image: linear-gradient(90deg, #F1C581 13%, #FC97A4 42%, #23255D 80%);
 }
 
 .heading {
