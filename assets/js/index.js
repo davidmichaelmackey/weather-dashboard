@@ -92,10 +92,13 @@ function getWeather(city) {
 
                   // creates h2 to display city, current day, & current weather icon
                   var currentWeatherHead = $('<h2>')
+                    // adds city name to header
                     .text(city + ' (' + currDay + ')');
                   // creates img to display icon
                   var iconImgEl = $('<img>')
+                    // adds icon to img
                     .attr({
+                      // adds id to img
                       id: 'current-weather-icon',
                       src: cityCurrentWeatherIcon,
                       alt: 'Weather Icon'
@@ -105,17 +108,29 @@ function getWeather(city) {
 
                   var currentWeatherInfo = [ 'Temp: ' + weatherData.current.temp + ' °F', 'Wind: ' + weatherData.current.wind_speed + ' MPH', 'Humidity: ' + weatherData.current.humidity + '%', 'UV Index: ' + weatherData.current.uvi ];
 
+                  // for each item in currentWeatherInfo array - creates a list item
                   currentWeatherInfo.forEach(function(info) {
+                    // creates list item
                     var currWeatherListItem;
+                    // if statement to add class to UV index
                     if (info === 'UV Index: ' + weatherData.current.uvi) {
+                      // creates list item
                       currWeatherListItem = $('<li>').text('UV Index: ');
+                      // appends list item to ul
                       currentWeatherListElement.append(currWeatherListItem);
+                      // creates span to hold UV index
                       var uviItem = $('<span>').text(weatherData.current.uvi);
+                      // adds class to UV index
                       var uviClass = uviItem.text() <= 2 ? 'green' : uviItem.text() <= 7 ? 'orange' : 'red';
+                      // adds class to UV index
                       uviItem.addClass(uviClass);
+                      // appends UV index to list item
                       currWeatherListItem.append(uviItem);
+                      // appends list item to ul
                     } else {
+                      // creates list item
                       currWeatherListItem = $('<li>').text(info);
+                      // appends list item to ul
                       currentWeatherListElement.append(currWeatherListItem);
                     }
                   });
@@ -270,7 +285,9 @@ function clearLocalStorage() {
   const confirmClear = confirm(`Are you sure you want to clear the local storage?`);
   // If the user confirms the action, clear local storage and reload the page
   if (confirmClear) {
+    // Clear local storage
     localStorage.clear();
+    // Reload the page
     window.location.reload();
   }
 }
